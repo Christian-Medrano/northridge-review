@@ -14,20 +14,20 @@
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
   $labels = array(
-    'name'               => 'Projects',
-    'singular_name'      => 'Project',
-    'menu_name'          => 'Projects',
-    'name_admin_bar'     => 'Project',
+    'name'               => 'Pros',
+    'singular_name'      => 'Pro',
+    'menu_name'          => 'Pros',
+    'name_admin_bar'     => 'Pro',
     'add_new'            => 'Add New',
-    'add_new_item'       => 'Add New Project',
-    'new_item'           => 'New Project',
-    'edit_item'          => 'Edit Project',
-    'view_item'          => 'View Project',
-    'all_items'          => 'All Projects',
-    'search_items'       => 'Search Projects',
-    'parent_item_colon'  => 'Parent Project',
-    'not_found'          => 'No Projects Found',
-    'not_found_in_trash' => 'No Projects Found in Trash'
+    'add_new_item'       => 'Add New Pro',
+    'new_item'           => 'New Pro',
+    'edit_item'          => 'Edit Pro',
+    'view_item'          => 'View Pro',
+    'all_items'          => 'All Pros',
+    'search_items'       => 'Search Pros',
+    'parent_item_colon'  => 'Parent Pro',
+    'not_found'          => 'No Pros Found',
+    'not_found_in_trash' => 'No Pros Found in Trash'
   );
 
   $args = array(
@@ -40,16 +40,59 @@ function create_post_type() {
     'show_in_menu'        => true,
     'show_in_admin_bar'   => true,
     'menu_position'       => null,
-    'menu_icon'           => 'dashicons-grid-view',
+    'menu_icon'           => 'dashicons-media-interactive',
     'capability_type'     => 'post',
     'hierarchical'        => false,
     'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'comments' ),
     'has_archive'         => true,
-    'rewrite'             => array( 'slug' => 'projects' ),
+    'rewrite'             => array( 'slug' => 'pros' ),
     'query_var'           => true
   );
 
-  register_post_type( 'fourohfive_project', $args );
+  register_post_type( 'fourohfive_pro', $args );
+
+
+  // creating new content type called menu
+
+  $labelsMenu = array(
+    'name'               => 'Poems',
+    'singular_name'      => 'Poem',
+    'menu_name'          => 'Poems',
+    'name_admin_bar'     => 'Poem',
+    'add_new'            => 'Add New',
+    'add_new_item'       => 'Add New Poem',
+    'new_item'           => 'New Poem',
+    'edit_item'          => 'Edit Poem',
+    'view_item'          => 'View Poem',
+    'all_items'          => 'All Poems',
+    'search_items'       => 'Search Poems',
+    'parent_item_colon'  => 'Parent Poem',
+    'not_found'          => 'No Poems Found',
+    'not_found_in_trash' => 'No Poems Found in Trash'
+  );
+
+  $argsMenu = array(
+    'labels'              => $labelsMenu,
+    'public'              => true,
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'show_ui'             => true,
+    'show_in_nav_menus'   => true,
+    'show_in_menu'        => true,
+    'show_in_admin_bar'   => true,
+    'menu_position'       => null,
+    'menu_icon'           => 'dashicons-carrot',
+    'capability_type'     => 'post',
+    'hierarchical'        => false,
+    'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'comments' ),
+    'has_archive'         => true,
+    'rewrite'             => array( 'slug' => 'poems' ),
+    'query_var'           => true
+  );
+
+  register_post_type( 'fourohfive_poem', $argsMenu );
+
+
 }
 
 // Let's give our custom post type some category and tag like functionality
@@ -113,4 +156,6 @@ function create_taxonomies() {
   );
 
   register_taxonomy('fourohfive_project_attribute','fourohfive_project',$args);
+
+
 }
