@@ -13,25 +13,28 @@
 
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
-  $labels = array(
-    'name'               => 'Pros',
-    'singular_name'      => 'Pro',
-    'menu_name'          => 'Pros',
-    'name_admin_bar'     => 'Pro',
+
+    // Prose Custom Type
+
+  $labelsProse = array(
+    'name'               => 'Prose',
+    'singular_name'      => 'Prose Piece',
+    'menu_name'          => 'Prose',
+    'name_admin_bar'     => 'Prose Piece',
     'add_new'            => 'Add New',
-    'add_new_item'       => 'Add New Pro',
-    'new_item'           => 'New Pro',
-    'edit_item'          => 'Edit Pro',
-    'view_item'          => 'View Pro',
-    'all_items'          => 'All Pros',
-    'search_items'       => 'Search Pros',
-    'parent_item_colon'  => 'Parent Pro',
-    'not_found'          => 'No Pros Found',
-    'not_found_in_trash' => 'No Pros Found in Trash'
+    'add_new_item'       => 'Add New Prose Piece',
+    'new_item'           => 'New Prose Piece',
+    'edit_item'          => 'Edit Prose Piece',
+    'view_item'          => 'View Prose Piece',
+    'all_items'          => 'All Prose',
+    'search_items'       => 'Search Prose Prose',
+    'parent_item_colon'  => 'Parent Prose Piece',
+    'not_found'          => 'No Prose Found',
+    'not_found_in_trash' => 'No Prose Found in Trash'
   );
 
-  $args = array(
-    'labels'              => $labels,
+  $argsProse = array(
+    'labels'              => $labelsProse,
     'public'              => true,
     'exclude_from_search' => false,
     'publicly_queryable'  => true,
@@ -40,39 +43,38 @@ function create_post_type() {
     'show_in_menu'        => true,
     'show_in_admin_bar'   => true,
     'menu_position'       => null,
-    'menu_icon'           => 'dashicons-media-interactive',
+    'menu_icon'           => 'dashicons-media-text',
     'capability_type'     => 'post',
     'hierarchical'        => false,
     'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'comments' ),
     'has_archive'         => true,
-    'rewrite'             => array( 'slug' => 'pros' ),
+    'rewrite'             => array( 'slug' => 'prose' ),
     'query_var'           => true
   );
 
-  register_post_type( 'fourohfive_pro', $args );
+  register_post_type( 'fourohfive_prose', $argsProse );
 
+  // Poetry Custom Type
 
-  // creating new content type called menu
-
-  $labelsMenu = array(
-    'name'               => 'Poems',
+  $labelsPoem = array(
+    'name'               => 'Poetry',
     'singular_name'      => 'Poem',
-    'menu_name'          => 'Poems',
+    'menu_name'          => 'Poetry',
     'name_admin_bar'     => 'Poem',
     'add_new'            => 'Add New',
     'add_new_item'       => 'Add New Poem',
     'new_item'           => 'New Poem',
     'edit_item'          => 'Edit Poem',
     'view_item'          => 'View Poem',
-    'all_items'          => 'All Poems',
-    'search_items'       => 'Search Poems',
+    'all_items'          => 'All Poetry',
+    'search_items'       => 'Search Poetry',
     'parent_item_colon'  => 'Parent Poem',
-    'not_found'          => 'No Poems Found',
-    'not_found_in_trash' => 'No Poems Found in Trash'
+    'not_found'          => 'No Poetry Found',
+    'not_found_in_trash' => 'No Poetry Found in Trash'
   );
 
-  $argsMenu = array(
-    'labels'              => $labelsMenu,
+  $argsPoem = array(
+    'labels'              => $labelsPoem,
     'public'              => true,
     'exclude_from_search' => false,
     'publicly_queryable'  => true,
@@ -81,18 +83,96 @@ function create_post_type() {
     'show_in_menu'        => true,
     'show_in_admin_bar'   => true,
     'menu_position'       => null,
-    'menu_icon'           => 'dashicons-carrot',
+    'menu_icon'           => 'dashicons-media-text',
     'capability_type'     => 'post',
     'hierarchical'        => false,
     'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'comments' ),
     'has_archive'         => true,
-    'rewrite'             => array( 'slug' => 'poems' ),
+    'rewrite'             => array( 'slug' => 'poem' ),
     'query_var'           => true
   );
 
-  register_post_type( 'fourohfive_poem', $argsMenu );
+  register_post_type( 'fourohfive_poetry', $argsPoem );
 
+  // Drama Custom Type
 
+  $labelsDrama = array(
+    'name'               => 'Drama',
+    'singular_name'      => 'Drama Piece',
+    'menu_name'          => 'Drama',
+    'name_admin_bar'     => 'Drama Piece',
+    'add_new'            => 'Add New',
+    'add_new_item'       => 'Add New Drama Piece',
+    'new_item'           => 'New Drama Piece',
+    'edit_item'          => 'Edit Drama Piece',
+    'view_item'          => 'View Drama Piece',
+    'all_items'          => 'All Drama',
+    'search_items'       => 'Search Drama',
+    'parent_item_colon'  => 'Parent Drama Piece',
+    'not_found'          => 'No Drama Found',
+    'not_found_in_trash' => 'No Drama Found in Trash'
+  );
+
+  $argsDrama = array(
+    'labels'              => $labelsDrama,
+    'public'              => true,
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'show_ui'             => true,
+    'show_in_nav_menus'   => true,
+    'show_in_menu'        => true,
+    'show_in_admin_bar'   => true,
+    'menu_position'       => null,
+    'menu_icon'           => 'dashicons-media-text',
+    'capability_type'     => 'post',
+    'hierarchical'        => false,
+    'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'comments' ),
+    'has_archive'         => true,
+    'rewrite'             => array( 'slug' => 'drama-piece' ),
+    'query_var'           => true
+  );
+
+  register_post_type( 'fourohfive_drama', $argsDrama );
+
+  // Art Custom Type
+
+  $labelsArt = array(
+    'name'               => 'Art',
+    'singular_name'      => 'Artwork',
+    'menu_name'          => 'Art',
+    'name_admin_bar'     => 'Artwork',
+    'add_new'            => 'Add New',
+    'add_new_item'       => 'Add New Artwork',
+    'new_item'           => 'New Artwork',
+    'edit_item'          => 'Edit Artwork',
+    'view_item'          => 'View Artwork',
+    'all_items'          => 'All Art',
+    'search_items'       => 'Search Art',
+    'parent_item_colon'  => 'Parent Artwork',
+    'not_found'          => 'No Art Found',
+    'not_found_in_trash' => 'No Art Found in Trash'
+  );
+
+  $argsArt = array(
+    'labels'              => $labelsArt,
+    'public'              => true,
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'show_ui'             => true,
+    'show_in_nav_menus'   => true,
+    'show_in_menu'        => true,
+    'show_in_admin_bar'   => true,
+    'menu_position'       => null,
+    'menu_icon'           => 'dashicons-format-image',
+    'capability_type'     => 'post',
+    'hierarchical'        => false,
+    'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'comments' ),
+    'has_archive'         => true,
+    'rewrite'             => array( 'slug' => 'artwork' ),
+    'query_var'           => true
+  );
+
+  register_post_type( 'fourohfive_artwork', $argsArt );
 }
 
 // Let's give our custom post type some category and tag like functionality
@@ -156,6 +236,4 @@ function create_taxonomies() {
   );
 
   register_taxonomy('fourohfive_project_attribute','fourohfive_project',$args);
-
-
 }
