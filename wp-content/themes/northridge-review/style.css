@@ -3,7 +3,7 @@ Theme Name: Northridge Review
 Theme URI: http://underscores.me/
 Author: CSUN SAGA
 Author URI: http://csunsaga.org
-Description: 2017 Theme for Northridge Review
+Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -41,6 +41,26 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+.grayscale {
+  filter: grayscale(100%);
+  transition-duration: 0.2s;
+}
+
+.grayscale:hover {
+  filter: grayscale(0%);
+  transition-duration: 0.2s;
+}
+
+h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.work {
+  font-family: Garamond, serif;
+}
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -272,17 +292,10 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
-  font-family: sans-serif;
 }
 
 p {
   margin-bottom: 1.5em;
-  color: black;
-  font-family: sans-serif;
-}
-
-p.work {
-  font-family: serif;
 }
 
 dfn, cite, em, i {
@@ -344,7 +357,7 @@ html {
 }
 
 body {
-  background: #ededed;
+  background: #fff;
   /* Fallback for when there is no custom background color defined. */
 }
 
@@ -589,6 +602,36 @@ a:hover, a:active {
   width: 50%;
 }
 
+.top-nav {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: #222;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 30px;
+}
+.top-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.top-nav li {
+  display: inline;
+  padding-right: 20px;
+}
+.top-nav li a:link, .top-nav li a:visited, .top-nav li a:focus {
+  opacity: 0.75;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.top-nav li a:hover {
+  opacity: 1.0;
+}
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -605,7 +648,7 @@ a:hover, a:active {
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
-  color: black;
+  color: #21759b;
   display: block;
   font-size: 14px;
   font-size: 0.875rem;
@@ -828,4 +871,123 @@ object {
 
 .gallery-caption {
   display: block;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.row {
+  font-size: 0;
+}
+
+body {
+  background-color: #ededed;
+}
+
+.ps-3 {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.pt-3 {
+  padding-top: 30px;
+}
+
+.post-thumbnail {
+  max-height: 100px;
+}
+
+.site-footer {
+  position: static;
+  bottom: 0px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: #222;
+  color: #777;
+  text-align: center;
+  font-size: 16px;
+}
+.site-footer a:link, .site-footer a:focus, .site-footer a:visited {
+  text-decoration: none;
+  opacity: 0.6;
+  color: white;
+}
+.site-footer a:hover {
+  opacity: 1.0;
+}
+
+.content-area {
+  float: right;
+  margin: 0 0 0 -25%;
+  width: 100%;
+}
+
+.site-main {
+  margin: 0 0 0 25%;
+  background-color: #fff;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+
+.site-content .widget-area {
+  float: left;
+  overflow: hidden;
+  width: 25%;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 100vh;
+}
+.site-content .widget-area ul {
+  display: inline;
+  margin: 0;
+}
+.site-content .widget-area ul li {
+  display: block;
+}
+
+.site-footer {
+  clear: both;
+  width: 100%;
+}
+
+.post-preview {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  transition-duration: 0.2s;
+}
+.post-preview a:link, .post-preview a:focus, .post-preview a:visited {
+  text-transform: uppercase;
+  transition-duration: 0.2s;
+  font-weight: bold;
+  text-decoration: none;
+  color: #777;
+  font-size: 14px;
+}
+.post-preview a:hover {
+  color: black;
+  transition-duration: 0.2s;
+}
+
+.post-preview:hover {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  transition-duration: 0.2s;
+}
+
+.thumb {
+  height: 200px;
+  max-width: 33.333333%;
+  overflow: hidden;
+  object-fit: fill;
+}
+
+.content-preview {
+  height: 100%;
+  padding-left: 30px;
 }

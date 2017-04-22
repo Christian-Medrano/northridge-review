@@ -1,20 +1,70 @@
 .content-area {
 	float: right;
 	margin: 0 0 0 (-$size__site-sidebar);
-	width: $size__site-main;
+	width: 100%;
 }
 
 .site-main {
 	margin: 0 0 0 $size__site-sidebar;
+	background-color: #fff;
+	height: 100vh;
+	position: relative;
+	overflow: auto;
 }
 
 .site-content .widget-area {
 	float: left;
 	overflow: hidden;
 	width: $size__site-sidebar;
+	padding-left: 30px;
+	padding-right: 30px;
+	height: 100vh;
+
+	ul {
+		display: inline;
+		margin: 0;
+		li {
+			display: block;
+		}
+	}
 }
 
 .site-footer {
 	clear: both;
 	width: $size__site-main;
+}
+
+.post-preview {
+	display: flex;
+	flex-direction: row;
+	transition-duration: $hover__duration;
+	a:link, a:focus, a:visited {
+		text-transform: uppercase;
+		transition-duration: $hover__duration;
+		font-weight: bold;
+		text-decoration: none;
+		color: #777;
+		font-size: 14px;
+	}
+	a:hover {
+		color: black;
+		transition-duration: $hover__duration;
+	}
+}
+.post-preview:hover {
+	display: flex;
+	flex-direction: row;
+	transition-duration: $hover__duration;
+}
+
+.thumb {
+	height: 200px;	
+	max-width: 33.333333%;
+	overflow: hidden;
+	object-fit: fill;
+}
+
+.content-preview {
+	height: 100%;
+	padding-left: 30px;
 }

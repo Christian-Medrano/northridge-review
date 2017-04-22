@@ -15,7 +15,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main pt-3 ps-3" role="main">
 
 		<?php
 		if ( have_posts() ) :
@@ -36,9 +36,13 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
+
+				echo '<div class="post-thumbnail">'.the_post_thumbnail('post-thumbnail').'</div>';
 				get_template_part( 'template-parts/content', get_post_format() );
+				echo '<hr>';
 
 			endwhile;
+
 
 			the_posts_navigation();
 

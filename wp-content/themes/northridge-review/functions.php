@@ -141,3 +141,12 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+// custom post type
+require get_parent_theme_file_path( '/inc/northridgereview_custom_post_types.php' );
+
+// create new menu type
+function register_my_menu() {
+  register_nav_menu('top-menu',__( 'Top Menu' ));
+}
+add_action( 'init', 'register_my_menu' );

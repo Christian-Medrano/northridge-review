@@ -8,34 +8,38 @@
  */
 
 get_header(); ?>
+ <?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main ps-3" role="main">
 
-		<?php
-		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
+		<header class="page-header">
+				<h1 class="page-title"><?php echo $term->name; ?> Archives</h1>
 			</header><!-- .page-header -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+		<?php if ( have_posts() ) : ?>
+			<?php while (have_posts()) : the_post(); ?>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
 
-			endwhile;
+			<div class="post-preview grayscale">
+				<?php 
+					echo '<a href="'.get_permalink().'" class="thumb">';
+					echo the_post_thumbnail();
+					echo '</a>';
+				 ?>
+				<div class="content-preview">
+					<h2><?php the_title(); ?></h2>
+					<p class="work">
+						<?php if (get_the_excerpt()){ echo get_the_excerpt();} ?>
+					</p>
+					<a href="'.get_permalink().'">Read more</a>
+				</div>
+			</div>
 
-			the_posts_navigation();
+			<hr>
+
+        <?php endwhile;
+
 
 		else :
 

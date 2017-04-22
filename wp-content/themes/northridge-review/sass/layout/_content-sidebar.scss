@@ -2,6 +2,7 @@
 	float: left;
 	margin: 0 (-$size__site-sidebar) 0 0;
 	width: $size__site-main;
+	background-color: $color__background-faded;
 }
 
 .site-main {
@@ -17,4 +18,8 @@
 .site-footer {
 	clear: both;
 	width: $size__site-main;
+}
+
+.bg-faded {
+	background-color: $color__background-faded;
 }

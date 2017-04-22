@@ -3,14 +3,9 @@ var gulp = require('gulp'),
 	sass = require('gulp-ruby-sass'),
 	autoprefixer = require('gulp-autoprefixer'),
 	cleancss = require('gulp-clean-css'),
-	jshint = require('gulp-jshint'),
-	uglify = require('gulp-uglify'),
-	imagemin = require('gulp-imagemin'),
 	rename = require('gulp-rename'),
-	concat = require('gulp-concat'),
 	notify = require('gulp-notify'),
-	cache = require('gulp-cache'),
-	del = require('del');
+	cache = require('gulp-cache')
 
 // Styles
 gulp.task('styles', function() {
