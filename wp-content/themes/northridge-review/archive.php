@@ -23,20 +23,16 @@ get_header(); ?>
 
 			<div class="post-preview grayscale">
 				<?php 
-					echo '<a href="'.get_permalink().'" class="thumb">';
-					echo the_post_thumbnail();
-					echo '</a>';
+					echo '<a href="'.get_permalink().'" class="thumb" style="background-image: url(\''.get_the_post_thumbnail_url().'\');"></a>';
 				 ?>
 				<div class="content-preview">
 					<h2><?php the_title(); ?></h2>
 					<p class="work">
 						<?php if (get_the_excerpt()){ echo get_the_excerpt();} ?>
 					</p>
-					<a href="'.get_permalink().'">Read more</a>
+					<?php echo '<a href="'.get_permalink().'">Read more</a>'; ?>
 				</div>
 			</div>
-
-			<hr>
 
         <?php endwhile;
 

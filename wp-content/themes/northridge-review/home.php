@@ -9,7 +9,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main pt-3 ps-3" role="main">
+		<main id="main" class="site-main" role="main">
 
 		<?php
 		if ( have_posts() ) :
@@ -27,9 +27,9 @@ get_header(); ?>
 			$loop = new WP_Query( $args );
 			while ( $loop->have_posts() ) : $loop->the_post();
 				echo '<div class="post-preview grayscale">';
-				echo '<a href="'.get_permalink().'" class="thumb">';
-				echo the_post_thumbnail();
-				echo '</a>';
+				
+				echo '<a href="'.get_permalink().'" class="thumb" style="background-image: url(\''.get_the_post_thumbnail_url().'\');"></a>';
+				
 				echo '<div class="content-preview">';
 				echo '<h2>'.get_the_title().'</h2>';
 				echo '<p class="work">';
@@ -40,7 +40,7 @@ get_header(); ?>
 				echo '<a href="'.get_permalink().'">Read more</a>';
 			  	echo '</div>';
 				echo '</div>';
-				echo '<hr>';
+				
 			endwhile;
 
 			wp_reset_query();
