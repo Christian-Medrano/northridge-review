@@ -49,7 +49,7 @@ function create_post_type() {
     'query_var'           => true
   );
 
-  register_post_type( 'fourohfive_project', $args );
+  register_post_type( 'submission', $args );
 }
 
 // Let's give our custom post type some category and tag like functionality
@@ -80,7 +80,32 @@ function create_taxonomies() {
     'rewrite'           => array( 'slug' => 'category' ),
   );
 
-  register_taxonomy('fourohfive_project_type',array('fourohfive_project'),$args);
+  register_taxonomy('submission_type',array('submission'),$args);
+
+  $labels = array(
+    'name'              => 'Issues',
+    'singular_name'     => 'Issue',
+    'search_items'      => 'Search Issues',
+    'all_items'         => 'All Issues',
+    'parent_item'       => 'Parent Issue',
+    'parent_item_colon' => 'Parent Issue:',
+    'edit_item'         => 'Edit Issue',
+    'update_item'       => 'Update Issue',
+    'add_new_item'      => 'Add New Issue',
+    'new_item_name'     => 'New Issue Name',
+    'menu_name'         => 'Issues',
+  );
+
+  $args = array(
+    'hierarchical'      => true,
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    'rewrite'           => array( 'slug' => 'issue' ),
+  );
+
+  register_taxonomy('submission_issue',array('submission'),$args);
 
   // Add a taxonomy like tags
   $labels = array(
@@ -112,5 +137,5 @@ function create_taxonomies() {
     'rewrite'               => array( 'slug' => 'attribute' ),
   );
 
-  register_taxonomy('fourohfive_project_attribute','fourohfive_project',$args);
+  register_taxonomy('submission_attribute','submission',$args);
 }

@@ -18,13 +18,14 @@
   <header>
     <?php if ( '' !== get_the_post_thumbnail() ) : ?>
       <div class="">
-        <?php the_post_thumbnail( 'northridgereview-featured-image', array( 'class' => 'img-fluid' ) ); ?>
+        <?php get_the_post_thumbnail(); ?>
       </div>
     <?php endif; ?>
   </header>
 
   <div class="">
     <?php the_title( '<h1 class="">', '</h1>' ); ?>
+    <div><?php get_the_post_thumbnail(); ?></div>
     <h2 class=""><?php the_author(); ?> on <?php the_time('F jS, Y') ?></h2>
 
     <?php
@@ -41,10 +42,6 @@
       ) );
     ?>
   </div>
-
-  <?php if ( is_single() ) : ?>
-    <?php northridgereview_entry_footer(); ?>
-  <?php endif; ?>
 
 </article>
 

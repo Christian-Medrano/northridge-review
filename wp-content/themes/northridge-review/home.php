@@ -23,7 +23,7 @@ get_header(); ?>
 			endif;
 
 			/* Start the Loop */
-			$args = array( 'post_type' => 'fourohfive_project', 'posts_per_page' => 10 );
+			$args = array( 'post_type' => 'submission', 'posts_per_page' => 10 );
 			$loop = new WP_Query( $args );
 			while ( $loop->have_posts() ) : $loop->the_post();
 				echo '<div class="post-preview grayscale">';

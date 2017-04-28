@@ -26,6 +26,7 @@
 	<header id="masthead" class="site-header" role="banner">
 
 		<nav class="top-nav">
+			<a href="#" id="menu-icon"></a>
 			<?wp_nav_menu( array( 'theme_location' => 'top-menu', 'container-class' => 'top-menu-class' ) ); ?>
 		</nav>
 
